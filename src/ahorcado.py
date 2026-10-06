@@ -143,9 +143,6 @@ def comprobar_letra(palabra_secreta, letra):
     pass
 
 
-
-
-
 def comprobar_palabra_completa(palabra_secreta, letras_probadas):
     '''
     Comprobar si se ha completado la palabra:
@@ -166,4 +163,27 @@ def comprobar_palabra_completa(palabra_secreta, letras_probadas):
             break # opcional
     return result
 
-    
+
+def ejecutar_turno(palabra_secreta:str, letras_probadas:set[str]):
+    '''
+    Ejecutar un turno de juego:
+    - Mostrar la palabra enmascarada
+    - Pedir la nueva letra
+    - Añadir la letra al conjunto de letras probadas
+    - Comprobar si la letra está en la palabra (acierto) o no (fallo)
+    - Mostrar mensaje indicando acierto/fallo
+    - Devolver True si la letra fue un acierto, False si fue un fallo
+    Ayuda:
+    - Recuerda las funciones que ya has implementado para mostrar la palabra, pedir la letra y comprobarla
+
+    :param palabra_secreta: palabra que el usuario tiene que adivinar
+    :type palabra_secreta: str
+    :param letras_probadas: conjunto con las letras que el usuario ya ha probado
+    :type letras_probadas: set [str]
+    :return: True si el usuario ha adivinado la palabra, y False en caso contraro
+    :rtype: bool
+    '''
+    print(enmascarar_palabra(palabra_secreta,letras_probadas))
+    nueva_letra = pedir_letra(letras_probadas)
+    letras_probadas.add(nueva_letra)
+    resultado = comprobar_letra(palabra_secreta,letra)
