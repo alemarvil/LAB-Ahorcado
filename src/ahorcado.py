@@ -113,7 +113,57 @@ def mensaje_error (letra:str,letras_probadas:set[str])-> str:
     else:
         msg = "Ya has introducido esa letra antes"
     return msg
-    
 
+def comprobar_letra(palabra_secreta, letra):
+    '''   
+    Comprobar letra:
+    - Comprobar si la letra está en la palabra secreta o no
+    - Devolver True si estaba y False si no
+
+    :param palabra_secreta: Palabra que se intenta adivinar
+    :type palabra_secreta: str
+    :param letra: letra que ha introducido el usuario
+    :type letra: str
+    :return: True si la letra está en la palabra
+    :rtype: bool
+    '''
+    pass
+
+    def mostrar_mensaje (acierto):
+        '''
+    Mostrar mensaje:
+     - Muestra por la consola el mensaje "¡Bien hecho! Esa letra está en la palabra.",
+    si acierto tiene el valor True. 
+    -  Muestra por la consola el mensaje "Lo siento, esa letra no está en la palabra."
+    si acierto tiene el valor False.
+
+    :param acierto: Es True si el usuario ha acertado la letra, y False en caso contrario
+    :type acierto: bool
+     '''
+    pass
+
+
+
+
+
+def comprobar_palabra_completa(palabra_secreta, letras_probadas):
+    '''
+    Comprobar si se ha completado la palabra:
+    - Comprobar si todas las letras de la palabra secreta han sido propuestas por el usuario
+    - Devolver True si es así o False si falta alguna letra por adivinar
+    :param palabra_secreta: Palabra que se tiene que adivinar
+    :type palabra_secreta: str
+    :param letras_probadas: Conjunto con las letras que ya se han probado
+    :type letras_probadas: set[str]
+    :return: Devuelve True si se han adivinado todas las letras de la palabra, y False en caso contrario
+    :rtype: bool
+    '''
+    # ESQUEMA DE PARA TODOO
+    result = True
+    for letra_secreta in palabra_secreta:
+        if not letra_secreta in letras_probadas:
+            result = False
+            break # opcional
+    return result
 
     
